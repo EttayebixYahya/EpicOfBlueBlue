@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Media</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Animation for the input fields and buttons */
+        .input-focus:focus {
+            box-shadow: 0 0 5px 2px rgba(59, 130, 246, 0.5);
+            border-color: #3b82f6;
+        }
+        .button-hover:hover {
+            background-color: #2563eb;
+            transform: scale(1.05);
+        }
+        .button-hover:focus {
+            outline: none;
+            box-shadow: 0 0 5px 2px rgba(59, 130, 246, 0.5);
+        }
+        /* Background Gradient */
+        body {
+            background: linear-gradient(to right, #3b82f6, #9333ea);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-6">
+        <header class="text-center mb-6">
+            <h1 class="text-2xl font-bold text-gray-800 mb-2">Send Media</h1>
+            <p class="text-gray-500">Upload and share your media files with a personal message</p>
+        </header>
+
+        <form action="https://formsubmit.co/88560faf1173b0bc20a44477e8730750" method="POST" class="space-y-4">
+            <!-- Media Link -->
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <label class="block mb-2 font-medium text-gray-700">Media Link</label>
+                <input type="text" name="media_link" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none input-focus" placeholder="Enter media file URL" required>
+            </div>
+
+            <!-- Message -->
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <label class="block mb-2 font-medium text-gray-700">Message</label>
+                <textarea name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none input-focus" placeholder="Write your message here..." maxlength="500"></textarea>
+                <div class="flex justify-end mt-2">
+                    <span class="text-sm text-gray-500">0/500 characters</span>
+                </div>
+            </div>
+
+            <!-- Recipient Email -->
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <label class="block mb-2 font-medium text-gray-700">Recipient Email</label>
+                <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none input-focus" placeholder="example@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            </div>
+
+            <!-- Hidden _next Field for Redirect -->
+            <input type="hidden" name="_next" value="Send.html">
+
+            <!-- Send Button -->
+            <div class="flex justify-center">
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg button-hover focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <span class="flex items-center justify-center">
+                        <span>Send Media</span>
+                        <i class="fas fa-paper-plane ml-2"></i>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
